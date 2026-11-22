@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore two fictional examples of a comment report and trace the findings back to their evidence.">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Comment report · Portfolio demo</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./demo.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="top">
+    <div class="wrap top-inner">
+      <a class="brand" href="./" aria-label="Comment report home"><span aria-hidden="true"></span> Comment report</a>
+      <nav aria-label="Main navigation">
+        <a href="#report">Sample report</a>
+        <a href="#how-it-works">How it works</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <section class="intro" aria-labelledby="intro-title">
+      <p class="kicker">Portfolio demo</p>
+      <h1 id="intro-title">Find the signal in your comments.</h1>
+      <p>See what viewers liked, where they struggled, and what they still want to know. Open any finding to read the evidence behind it.</p>
+      <p class="fiction">Both examples use fictional videos and comments.</p>
+      <fieldset class="switcher">
+        <legend>Choose a sample</legend>
+        <label><input type="radio" name="sample" value="garden" checked><span>Balcony garden</span></label>
+        <label><input type="radio" name="sample" value="audio"><span>Home recording</span></label>
+      </fieldset>
+      <p id="sample-status" class="sr-only" role="status"></p>
+    </section>
+
+    <article id="report" class="report" aria-label="Sample comment report">
+      <div class="report-top">
+        <div>
+          <p class="kicker">Sample comment report</p>
+          <h2 id="video-title">Balcony herb garden</h2>
+        </div>
+        <p id="sample-category" class="category"></p>
+      </div>
+      <section class="coverage" aria-label="Coverage">
+        <div>
+          <p id="eligible" class="metric"></p>
+          <p class="meta">English comments analyzed</p>
+        </div>
+        <div>
+          <p id="collected" class="metric"></p>
+          <p class="meta">Comments collected</p>
+        </div>
+        <details id="scope-details">
+          <summary>What’s included</summary>
+          <p id="scope" class="meta"></p>
+        </details>
+      </section>
+
+      <section class="section" aria-labelledby="summary-title">
+        <h3 id="summary-title">At a glance</h3>
+        <ul id="summary" class="summary-list"></ul>
+      </section>
+      <section class="section" aria-labelledby="sentiment-title">
+        <h3 id="sentiment-title">How the comments sound</h3>
+        <p class="meta">The percentages include uncertain sentiment.</p>
+        <ul id="distribution" class="distribution"></ul>
+      </section>
+      <section class="section" aria-labelledby="themes-title">
+        <h3 id="themes-title">Recurring themes</h3>
+        <div id="themes"></div>
+      </section>
+      <section class="section" aria-labelledby="questions-title">
+        <h3 id="questions-title">Viewer questions</h3>
+        <div id="questions"></div>
+      </section>
+      <section class="section" aria-labelledby="comments-title">
+        <h3 id="comments-title">Analyzed comments</h3>
+        <details class="finding">
+          <summary id="all-label">Read the comments</summary>
+          <div id="all-comments" class="evidence"></div>
+        </details>
+      </section>
+    </article>
+
+    <section id="how-it-works" class="method" aria-labelledby="method-title">
+      <div>
+        <p class="kicker">Behind the local app</p>
+        <h2 id="method-title">How it works</h2>
+        <p class="meta">This demo illustrates the report and its evidence links. The example findings were written for the demo.</p>
+      </div>
+      <dl class="method-list">
+        <div><dt>Bounded collection</dt><dd>The local app collects up to 75 newest top-level comments from one video and screens them for English.</dd></div>
+        <div><dt>Local sentiment</dt><dd>A CPU model and simple rules assign five outcomes. Uncertain is available when a label would overstate what the text says.</dd></div>
+        <div><dt>Recoverable reports</dt><dd>A background worker saves analysis progress and reports. The page reopens a saved analysis by ID after refresh.</dd></div>
+      </dl>
+    </section>
+    <noscript><p class="fiction">Enable JavaScript to open the sample reports.</p></noscript>
+  </main>
+  <footer class="wrap foot"><span>Comment report · Portfolio demo</span><a href="https://github.com/AM-7/comment-report-demo">Demo source</a></footer>
+</body>
+</html>
